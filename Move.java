@@ -1,5 +1,7 @@
-//A_star algorithm implementation//
+//Greedy algorithm implementation//
 //This class defines the moves on the board games//
+
+
 class Move {
 
   private Move() {}

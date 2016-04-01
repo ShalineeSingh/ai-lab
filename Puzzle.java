@@ -1,6 +1,5 @@
-//A_star algorithm implementation//
+//Greedy algorithm implementation//
 //Main class to run the program//
-
 import java.io.*;
 import java.util.*;
 
@@ -139,6 +138,17 @@ public class Puzzle {
 		    return (Math.abs(index/3 - (number-1)/3) + Math.abs(index%3 - (number-1)%3));
   }
 
+  public static int getgreedyHeuristic(int[] array) {
+	    int heuristic = 0;
+	   
+	    for(int i = 8; i >=array.length; i--) {
+	      if (array[i] != i){
+	    	  heuristic=heuristic+1;
+	      }
+	        
+	    }
+	    return heuristic;
+	  }
   private void addToQueue(State nextState) {
     if(nextState != null && !this.visited.contains(nextState)) this.queue.add(nextState);
   }
@@ -177,7 +187,7 @@ public class Puzzle {
   }
 
   public static void main(String[] args) {
-    int[] input={1,2,3,0,7,6,5,4,8};
+    int[] input={2,4,3,1,6,8,7,5,0};
     Puzzle puzzle = null;
 
    puzzle = new Puzzle(input);

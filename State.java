@@ -1,4 +1,5 @@
-//A_star algorithm implementation//
+//Greedy algorithm implementation//
+//Definition of how the state changes// 
 
 
 import java.util.Arrays;
@@ -25,7 +26,7 @@ class State {
     this.blankIndex = getIndex(input, 0);
     this.previous = null;
     this.g = 0;
-    this.h = Puzzle.getHeuristic(this.array);
+    this.h = Puzzle.getgreedyHeuristic(this.array);
     
   }
 
